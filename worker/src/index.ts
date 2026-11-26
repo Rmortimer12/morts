@@ -403,6 +403,9 @@ async function handleQuote(request: Request, env: Env): Promise<Response> {
   if (!name || !isEmail(email)) {
     return textResponse(request, env, "Name and a valid email are required.", 400);
   }
+  if (!phone) {
+    return textResponse(request, env, "Phone number is required.", 400);
+  }
 
   const items = parseQuoteItems(String(form.get("items") ?? "[]"));
   if (!items) return textResponse(request, env, "Invalid or empty quote items.", 400);
