@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "morts",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-26",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "upload_source_maps": true,
+  "secrets": {
+    "required": [
+      "RESEND_API_KEY",
+      "TURNSTILE_SECRET_KEY",
+      "RESEND_FROM_EMAIL",
+      "QUOTE_EMAIL_TO",
+      "QUOTE_EMAIL_CC",
+      "CONTACT_EMAIL_TO"
+    ]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "BRAND_NAME": "Mort's Custom Club Gear",
+    "ALLOWED_ORIGINS": "https://morts.au,https://www.morts.au,https://morts-shxsuxeg.myshopify.com",
+    "TURNSTILE_EXPECTED_HOSTNAMES": "morts.au,www.morts.au,morts-shxsuxeg.myshopify.com"
+  }
+}
